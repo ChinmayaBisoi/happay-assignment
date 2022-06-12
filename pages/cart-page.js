@@ -5,7 +5,7 @@ import Separator from "../src/components/separator";
 import TopNav from "../src/components/top-nav";
 import { CartContext } from "./_app";
 
-const ReceiptItem = ({ qty, price }: { qty: number; price: number }) => {
+const ReceiptItem = ({ qty, price }) => {
   return (
     <div className="flex justify-between items-center">
       <div>
@@ -16,15 +16,7 @@ const ReceiptItem = ({ qty, price }: { qty: number; price: number }) => {
   );
 };
 
-const OrderItem = ({
-  idx,
-  name,
-  id,
-}: {
-  idx: number;
-  name: string;
-  id: number;
-}) => {
+const OrderItem = ({ idx, name, id }) => {
   return (
     <div className={` grid grid-cols-4 p-3 items-center`}>
       <div className="">{idx + 1}</div>

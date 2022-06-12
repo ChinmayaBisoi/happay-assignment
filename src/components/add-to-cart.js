@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../pages/_app";
 
-const AddToCart = ({ productId }: { productId: number }) => {
+const AddToCart = ({ productId }) => {
   const { data, modifyCount } = useContext(CartContext);
   const product = data.filter((item) => item.id == productId)[0];
   return (

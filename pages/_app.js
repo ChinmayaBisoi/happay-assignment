@@ -1,16 +1,5 @@
 import "../styles/globals.css";
-import type { AppProps } from "next/app";
 import { createContext, useEffect, useState } from "react";
-
-interface ICartData {
-  id: number;
-  name: string;
-  description: string;
-  original_price?: number;
-  final_price?: number;
-  img_url: string;
-  count?: number;
-}
 
 const cartData = [
   {
@@ -49,10 +38,10 @@ const cartData = [
 ];
 
 export const CartContext = createContext(null);
-function MyApp({ Component, pageProps }: AppProps) {
-  const [data, setData] = useState<ICartData[] | []>([]);
+function MyApp({ Component, pageProps }) {
+  const [data, setData] = useState([]);
 
-  function modifyCount(id: number, price: number, value: number) {
+  function modifyCount(id, price, value) {
     let newVal = 0;
     if (price + value < 0) {
       newVal = price;

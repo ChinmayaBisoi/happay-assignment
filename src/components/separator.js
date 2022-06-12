@@ -1,6 +1,6 @@
 import React from "react";
 
-const Separator = ({ className = "" }: { className?: string }) => {
+const Separator = ({ className = "" }) => {
   return <div className={`min-h-[1px] w-full bg-black ${className}`}></div>;
 };
 

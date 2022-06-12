@@ -61,7 +61,7 @@ const BottomSection = () => {
   );
 };
 
-const DiscountTag = ({ discount }: { discount: number }) => {
+const DiscountTag = ({ discount }) => {
   return <div className="bg-black text-white">{discount}% OFF</div>;
 };
 
@@ -73,14 +73,6 @@ const Card = ({
   finalPrice,
   originalPrice,
   img,
-}: {
-  qty: number;
-  id: number;
-  name: string;
-  description: string;
-  finalPrice: number;
-  originalPrice?: number;
-  img: string;
 }) => {
   const calculateDiscount = () => {
     if (!!originalPrice) {
@@ -90,14 +82,12 @@ const Card = ({
     }
   };
 
-  let productName: string | string[] = name.split(" ");
+  let productName = name.split(" ");
   for (let i = 0; i < productName.length; i++) {
     productName[i] =
       productName[i].charAt(0).toUpperCase() + productName[i].slice(1);
   }
   productName = productName.join(" ");
-
-  const discount = calculateDiscount();
 
   return (
     <div className=" flex flex-col w-[328px] rounded-lg p-[8px]">
