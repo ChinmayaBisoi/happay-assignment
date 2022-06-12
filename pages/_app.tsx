@@ -9,6 +9,7 @@ interface ICartData {
   original_price?: number;
   final_price?: number;
   img_url: string;
+  count?: number;
 }
 
 const cartData = [
