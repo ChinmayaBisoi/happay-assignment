@@ -114,7 +114,7 @@ const Card = ({
 const Products = () => {
   return (
     <div className="grid grid-cols-12 md:py-25 py-8">
-      <div className="md:col-span-8 md:col-start-3 col-span-full px-4 md:px-0">
+      <div className="md:col-span-10 md:col-start-2 col-span-full px-4 md:px-0">
         <TopSection />
         <BottomSection />
       </div>
