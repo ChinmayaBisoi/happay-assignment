@@ -10,6 +10,8 @@ const AddToCart = ({ productId }: { productId: number }) => {
         <div
           onClick={() => {
             modifyCount(productId, product.count, 1);
+            localStorage.setItem("items", JSON.stringify(data));
+            console.log(localStorage);
           }}
           className="w-full text-center text-[#1d7cbf] py-2"
         >
@@ -20,6 +22,7 @@ const AddToCart = ({ productId }: { productId: number }) => {
           <div
             onClick={() => {
               modifyCount(productId, product.count, -1);
+              localStorage.setItem("items", JSON.stringify(data));
             }}
             className="col-span-1 py-2 bg-[#1d7cbf] text-white flex justify-center items-center"
           >
@@ -29,6 +32,8 @@ const AddToCart = ({ productId }: { productId: number }) => {
           <div
             onClick={() => {
               modifyCount(productId, product.count, 1);
+              localStorage.setItem("items", JSON.stringify(data));
+              console.log(JSON.parse(localStorage.getItem("items")));
             }}
             className="col-span-1 py-2 bg-[#1d7cbf] text-white"
           >

@@ -65,11 +65,17 @@ function MyApp({ Component, pageProps }: AppProps) {
     setData(temp);
   }
   useEffect(() => {
-    const temp = cartData.map((item) => {
-      return { ...item, count: 0 };
-    });
+    const items = JSON.parse(localStorage.getItem("items"));
+    if (items) {
+      setData(items);
+    } else {
+      const temp = cartData.map((item) => {
+        return { ...item, count: 0 };
+      });
 
-    setData(temp);
+      setData(temp);
+      localStorage.setItem("items", JSON.stringify(temp));
+    }
   }, []);
 
   return (

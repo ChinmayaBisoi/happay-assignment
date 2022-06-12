@@ -1,8 +1,8 @@
-import React, { useContext, useState } from "react";
-import Separator from "./separator";
 import Image from "next/image";
+import React, { useContext, useState } from "react";
 import { CartContext } from "../../pages/_app";
 import AddToCart from "./add-to-cart";
+import Separator from "./separator";
 
 const TopSection = () => {
   return (
@@ -82,8 +82,6 @@ const Card = ({
   originalPrice?: number;
   img: string;
 }) => {
-  const [count, setCount] = useState(qty);
-  const cartData = useContext(CartContext);
   const calculateDiscount = () => {
     if (!!originalPrice) {
       return ((originalPrice - finalPrice) * 100) / originalPrice;
