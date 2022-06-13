@@ -62,7 +62,11 @@ const BottomSection = () => {
 };
 
 const DiscountTag = ({ discount }) => {
-  return <div className="bg-black text-white">{discount}% OFF</div>;
+  return (
+    <div className="bg-black text-white px-2 rounded-r-none rounded-lg">
+      {discount}% OFF
+    </div>
+  );
 };
 
 const Card = ({
@@ -81,6 +85,7 @@ const Card = ({
       return 0;
     }
   };
+  let hasDiscount = calculateDiscount();
 
   let productName = name.split(" ");
   for (let i = 0; i < productName.length; i++) {
@@ -90,23 +95,30 @@ const Card = ({
   productName = productName.join(" ");
 
   return (
-    <div className=" flex flex-col w-[328px] rounded-lg p-[8px]">
-      <div className="w-auto h-auto flex justify-center items-center relative">
-        <Image src={img} alt="" width={604} height={378} />
-      </div>
-      <div className="px-2 mt-2">
-        <div className="flex justify-between ">
-          <div>{productName}</div>
-          <div className="flex space-x-4">
-            {originalPrice && (
-              <div className="line-through">$ {originalPrice}</div>
-            )}
-            <div>$ {finalPrice}</div>
-          </div>
+    <div className={`${hasDiscount ? "relative" : ""}`}>
+      <div className={`flex flex-col w-[328px] rounded-lg p-[8px] `}>
+        <div className="w-auto h-auto flex justify-center items-center relative">
+          <Image src={img} alt="" width={604} height={378} />
         </div>
-        <div className="">{description}</div>
-        <AddToCart productId={id} />
+        <div className="px-2 mt-2">
+          <div className="flex justify-between ">
+            <div>{productName}</div>
+            <div className="flex space-x-4">
+              {originalPrice && (
+                <div className="line-through">$ {originalPrice}</div>
+              )}
+              <div>$ {finalPrice}</div>
+            </div>
+          </div>
+          <div className="">{description}</div>
+          <AddToCart productId={id} />
+        </div>
       </div>
+      {!!hasDiscount && (
+        <div className="w-auto h-auto flex justify-center items-center absolute top-10 right-1">
+          <DiscountTag discount={hasDiscount} />
+        </div>
+      )}
     </div>
   );
 };
