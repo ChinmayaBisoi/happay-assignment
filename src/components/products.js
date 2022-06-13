@@ -95,7 +95,7 @@ const Card = ({
   productName = productName.join(" ");
 
   return (
-    <div className={`${hasDiscount ? "relative" : ""}`}>
+    <div className={`${hasDiscount ? "relative" : ""} basis-1/3`}>
       <div className={`flex flex-col w-[328px] rounded-lg p-[8px] `}>
         <div className="w-auto h-auto flex justify-center items-center relative">
           <Image src={img} alt="" width={604} height={378} />
