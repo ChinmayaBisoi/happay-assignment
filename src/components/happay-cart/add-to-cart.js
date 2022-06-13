@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { CartContext } from "../../pages/_app";
 
 const AddToCart = ({ productId }) => {
   const { data, modifyCount } = useContext(CartContext);

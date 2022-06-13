@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "../../styles/globals.css";
 import { createContext, useEffect, useState } from "react";
 
 const cartData = [
