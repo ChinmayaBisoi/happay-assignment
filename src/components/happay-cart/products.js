@@ -100,7 +100,7 @@ const Card = ({
         <div className="w-auto h-auto flex justify-center items-center relative">
           <Image src={img} alt="" width={604} height={378} />
           {!!hasDiscount && (
-            <div className="w-auto h-auto flex justify-center items-center absolute top-10 -mr-1">
+            <div className="w-auto h-auto flex justify-center items-center absolute top-10 right-0">
               <DiscountTag discount={hasDiscount} />
             </div>
           )}
