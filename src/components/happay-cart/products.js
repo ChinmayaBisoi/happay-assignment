@@ -99,7 +99,13 @@ const Card = ({
       <div className={`flex flex-col w-[328px] rounded-lg p-[8px] `}>
         <div className="w-auto h-auto flex justify-center items-center relative">
           <Image src={img} alt="" width={604} height={378} />
+          {!!hasDiscount && (
+            <div className="w-auto h-auto flex justify-center items-center absolute top-10 -mr-1">
+              <DiscountTag discount={hasDiscount} />
+            </div>
+          )}
         </div>
+
         <div className="px-2 mt-2">
           <div className="flex justify-between ">
             <div>{productName}</div>
@@ -114,11 +120,6 @@ const Card = ({
           <AddToCart productId={id} />
         </div>
       </div>
-      {!!hasDiscount && (
-        <div className="w-auto h-auto flex justify-center items-center absolute top-10 right-1">
-          <DiscountTag discount={hasDiscount} />
-        </div>
-      )}
     </div>
   );
 };

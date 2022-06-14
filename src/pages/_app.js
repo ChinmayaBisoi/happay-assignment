@@ -1,5 +1,6 @@
-import "../../styles/globals.css";
+import "../../dist/output.css";
 import { createContext, useEffect, useState } from "react";
+import Head from "next/head";
 
 const cartData = [
   {
@@ -70,6 +71,11 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <CartContext.Provider value={{ data, modifyCount }}>
+      <Head>
+        <title>Create Next App</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       <Component {...pageProps} />
     </CartContext.Provider>
   );

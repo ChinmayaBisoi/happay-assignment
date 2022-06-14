@@ -1,9 +1,9 @@
 import Link from "next/link";
-import React, { useContext, useState } from "react";
-import AddToCart from "../src/components/add-to-cart";
-import Separator from "../src/components/separator";
-import TopNav from "../src/components/top-nav";
+import React, { useContext } from "react";
 import { CartContext } from "./_app";
+import TopNav from "../components/happay-cart/top-nav";
+import Separator from "../components/happay-cart/separator";
+import AddToCart from "../components/happay-cart/add-to-cart";
 
 const ReceiptItem = ({ qty, price }) => {
   return (
